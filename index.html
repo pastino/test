@@ -1,0 +1,232 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Hye Sun's Portfolio</title>
+<script src="js/jquery-1.9.1.min.js"></script> <!--파일이 존재 하는지 확인할 것-->
+<link href="css/reset.css" rel="stylesheet" type="text/css" /> <!--CSS 로드-->
+<script type="text/javascript" src="js/jquery.nicescroll.min.js"></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+
+        <style>
+            
+            .single-page-nav { /*선택자 이름은 바꾸지 말것!*/
+                position: fixed; /*수정하지 말것!*/
+                top:228px;
+				left:95px;
+				height:0;
+                width:449px;
+				z-index:9999; /*네비를  최고위에 위치시킨다. */
+				
+            }
+			
+            
+            .single-page-nav ul {
+				list-style: none;
+                margin: 0 auto;
+                width:449px;
+                overflow: hidden;
+            }
+            
+		
+            .section {width:100%; height:auto;}
+
+
+
+			
+			 div#wrap{width:100%; overflow:hidden;}
+		
+				
+            .section {width:100%; height:auto;}
+
+#section1{ width:100%; height:960px; background:url(images/content01.jpg); position:relative;}
+#section2{ width:100%; height:960px; background:url(images/content02.jpg);  position:relative;}		 
+#section3{ width:100%; height:960px; background:url(images/content03.jpg);  position:relative;}	
+#section4{ width:100%; height:960px; background:url(images/content04.jpg); position:relative;}	
+
+
+.nav01{width:304px; height:83px; margin-bottom:57px; }
+.nav02{width:245px; height:83px; margin-bottom:57px; }
+.nav03{width:278px; height:84px; margin-bottom:57px;}
+.nav04{width:449px; height:85px; margin-bottom:57px;}
+
+.sum01{width:367px; height:371px; position:absolute; top:271px; left:809px;}
+.sum03{width:367px; height:371px; position:absolute; top:271px; left:809px;}
+.sum05{width:367px; height:371px; position:absolute; top:271px; left:809px;}
+.sum02{width:367px; height:371px; position:absolute; top:271px; right:296px;}
+.sum04{width:367px; height:371px; position:absolute; top:271px;  right:296px;}
+.sum06{width:367px; height:371px; position:absolute; top:271px;  right:296px;}
+
+</style>
+    </head>
+    <body>
+      <div class="single-page-nav">
+        <ul id="menu"><!--네비게이션의 섹션 갯수(메뉴)를 늘이거나 줄이려면 li 리스트를 추가하면 됩니다.-->
+                <li><a href="#section1"><img class="nav01" src="images/navi01.png"></a></li>
+                <li><a href="#section2"><img class="nav02" src="images/navi02.png"></a></li>
+                <li><a href="#section3"><img class="nav03" src="images/navi03.png"></a></li>
+                <li><a href="#section4"><img class="nav04" src="images/navi04.png"></a></li>
+         </ul>
+       </div> <!--single-page-nav-->
+
+       <div id="wrap">
+<div class="section" id="section1"></div>
+<div class="section" id="section2">
+
+<div class="sum01"><a href="teuida/teuida.html" target="_blank"><img src="images/sum01.png" class="hoverimg"></a></div>
+<div class="sum02"><a href="trendy/trendy.html" target="_blank"><img src="images/sum02.png" class="hoverimg"></a></div>
+
+ </div>
+ <div class="section" id="section3">
+ 
+<div class="sum03"><a href="hotel/hotel.html" target="_blank"><img src="images/sum03.png" class="hoverimg"></a></div>
+<div class="sum04"><a href="seoul/seoul.html" target="_blank"><img src="images/sum04.png" class="hoverimg"></a></div>
+ 
+ </div> 
+ <div class="section" id="section4">
+ 
+<div class="sum05"><a href="visual/visual.html" target="_blank"> <img src="images/sum05.png" class="hoverimg"></a></div>
+<div class="sum06"><a href="visual/visual.html#page03" target="_blank"><img src="images/sum06.png" class="hoverimg"></a></div>
+ 
+ </div> 
+</div>
+
+
+
+        
+    <!--sing page nav의 jquery 시작 부분-->
+        <script>window.jQuery || document.write('<script src="js/jquery-1.9.1.min.js"><\/script>')</script>
+        <script src="js/jquery.singlePageNav.min.js"></script> <!-- 파일이 존재 하는지 확인할 것-->
+        <script>
+
+            // Prevent console.log from generating errors in IE for the purposes of the demo
+            if ( ! window.console ) console = { log: function(){} };
+
+            // The actual plugin
+            $('.single-page-nav').singlePageNav({
+                offset: $('.single-page-nav').outerHeight(),
+                filter: ':not(.external)',
+                updateHash: true,
+                beforeStart: function() {
+                    console.log('begin scrolling');
+                },
+                onComplete: function() {
+                    console.log('done scrolling');
+                }
+            });
+			    $('.section-tabmenu').tabMenus();
+				
+        </script>
+         <!--sing page nav의 jquery 끝나는 부분-->
+         
+ 
+
+
+<!--여기부터-->
+<script>//hoverimg 이 롤오버 하는 스크립트
+$(document).ready(function(){
+    $(".hoverimg").mouseover(function (){
+        var file = $(this).attr('src').split('/');
+        var filename = file[file.length-1];
+        var path = '';
+ 
+        for(i=0 ; i < file.length-1 ; i++) {
+            path = ( i == 0 )?path + file[i]:path + '/' + file[i];
+        }
+        $(this).attr('src',path+'/'+filename.replace(/.([a-zA-Z]{3,3})$/, "_on.$1"));
+        //$(this).attr('src',path+'/'+filename.replace('.','_on.'));
+ 
+    }).mouseout(function(){
+        var file = $(this).attr('src').split('/');
+        var filename = file[file.length-1];
+        var path = '';
+        for(i=0 ; i < file.length-1 ; i++){
+            path = ( i == 0 )?path + file[i]:path + '/' + file[i];
+        }
+        $(this).attr('src',path+'/'+filename.replace(/_on.([a-zA-Z]{3,3})$/, ".$1"));
+        //$(this).attr('src',path+'/'+filename.replace('_on.','.'));
+    });
+});
+</script> <!--여기까지-->
+
+<script>
+								/*$(".nav01").click(function(e){
+				$(".nav01").attr({"src":"images/navi01_on.png"});
+				$(".nav02").attr({"src":"images/navi02.png"});
+				$(".nav03").attr({"src":"images/navi03.png"});
+				$(".nav04").attr({"src":"images/navi04.png"});
+	});	
+	
+								$(".nav02").click(function(e){
+				$(".nav02").attr({"src":"images/navi02_on.png"});
+				$(".nav01").attr({"src":"images/navi01.png"});
+				$(".nav03").attr({"src":"images/navi03.png"});
+				$(".nav04").attr({"src":"images/navi04.png"});
+	});	
+	
+								$(".nav03").click(function(e){
+				$(".nav03").attr({"src":"images/navi03_on.png"});
+				$(".nav01").attr({"src":"images/navi01.png"});
+				$(".nav02").attr({"src":"images/navi02.png"});
+				$(".nav04").attr({"src":"images/navi04.png"});
+	});	
+	
+								$(".nav04").click(function(e){
+				$(".nav04").attr({"src":"images/navi04_on.png"});
+				$(".nav01").attr({"src":"images/navi01.png"});
+				$(".nav02").attr({"src":"images/navi02.png"});
+				$(".nav03").attr({"src":"images/navi03.png"});
+	});	*/
+	
+
+</script>
+
+<script type="text/javascript">
+	var objHeight = [];
+	
+	$(document).ready(function () {
+		$(".section").each(function (n) {
+			objHeight[n] = $(this).offset().top;
+		});
+		
+		setMenuOn();
+	});
+	
+	$(window).scroll(function () {
+		setMenuOn();
+	});
+	
+	function setMenuOn() {
+		var nBtmWindow = $(window).scrollTop() + $(window).height();
+		var nCurrent = 1;
+		var strNum = "";
+		
+		for (var i=objHeight.length; i > 0; i--) {
+			if (objHeight[i] < nBtmWindow) {
+				nCurrent = i + 1;
+				break;
+			}
+		}
+		
+		for (var i=1; i < objHeight.length + 1; i++) {
+			strNum = i < 10 ? "0"+i : i;
+			
+			if (i == nCurrent && !$(".nav" + strNum).hasClass("on")) {
+				$(".nav" + strNum).addClass("on");
+				$(".nav" + strNum).attr({"src":"images/navi"+strNum+"_on.png"});
+			}
+			if (i != nCurrent && $(".nav" + strNum).hasClass("on")) {
+				$(".nav" + strNum).removeClass("on");
+				$(".nav" + strNum).attr({"src":"images/navi"+strNum+".png"});
+			}
+		}
+	}
+</script>
+  
+    
+    </body>
+</html>

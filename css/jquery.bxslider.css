@@ -1,0 +1,79 @@
+/** VARIABLES
+===================================*/
+/** RESET AND LAYOUT
+===================================*/
+.bx-wrapper {
+  position: relative;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+}
+
+.bxslider {
+  margin: 0;
+  padding: 0;
+}
+ul.bxslider {
+  list-style: none;
+}
+.bx-viewport {
+  /* fix other elements on the page moving (in Chrome) */
+  -webkit-transform: translateZ(0);
+}
+/** THEME
+===================================*/
+.bx-wrapper {
+/**  -moz-box-shadow: 0 0 5px #ccc; **/
+/**  -webkit-box-shadow: 0 0 5px #ccc; **/
+/**   box-shadow: 0 0 5px #ccc; **/
+
+}
+.bx-wrapper .bx-pager,
+.bx-wrapper .bx-controls-auto {
+  position: absolute;
+
+  width: 100%;
+}
+/* LOADER */
+.bx-wrapper .bx-loading {
+  min-height: 50px;
+  background: url('../images/bx_loader.gif') center center no-repeat #ffffff;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+}
+
+
+
+
+/* DIRECTION CONTROLS (NEXT / PREV)  넘기기 아이콘 */
+.bx-wrapper .bx-prev {
+  width:92px;
+  height:133px;
+  position:absolute;
+  top:400px;
+  left:60px;
+  background: url('../images/haw.png') no-repeat ;
+  z-index:99;
+  opacity:0.6;
+}
+.bx-wrapper .bx-prev:hover,
+.bx-wrapper .bx-prev:focus { opacity:0.5;}
+
+.bx-wrapper .bx-next {
+  width:92px;
+  height:133px;
+  position:absolute;
+  top:400px;
+  right:60px;
+  z-index:99;
+    opacity:0.6;
+  background: url('../images/haw2.png') no-repeat ;
+}
+.bx-wrapper .bx-next:hover,
+.bx-wrapper .bx-next:focus {opacity:0.5;}
+
+
+

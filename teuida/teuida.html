@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>TEUIDA</title>
+		<link href="css/reset.css" rel="stylesheet" type="text/css" /> <!--CSS 로드 head태그 안에 꼭 넣을 것!!-->
+        
+ <script src="js/jquery-1.9.1.min.js"></script> <!--파일이 존재 하는지 확인할 것-->
+ <script type="text/javascript" src="js/jquery.nicescroll.min.js"></script>
+        <style>
+
+
+</style> 
+
+</head>
+
+<body>
+<style>
+.wrap{width:100%; margin:0 auto; overflow:hidden;}
+
+.page01{width:100%; height:3828px; background:url(images/teuida_pt_01.jpg);}
+.page02{width:100%; height:3114px; background:url(images/teuida_pt_02.jpg);}
+.page03{width:100%; height:3231px; background:url(images/teuida_pt_03.jpg);}
+.page04{width:100%; height:3758px; background:url(images/teuida_pt_04.jpg);}
+.page05{width:100%; height:2509px; background:url(images/teuida_pt_05.jpg);}
+.page06{width:100%; height:2930px; background:url(images/teuida_pt_06.jpg);}
+.page07{width:100%; height:3431px; background:url(images/teuida_pt_07.jpg);}
+.page08{width:100%; height:2795px; background:url(images/teuida_pt_08.jpg);}
+.page09{width:100%; height:1623px; background:url(images/teuida_pt_09.jpg);}
+.page10{width:100%; height:2815px; background:url(images/teuida_pt_10.jpg);}
+.page11{width:100%; height:2237px; background:url(images/teuida_pt_11.jpg);}
+
+
+</style>
+
+
+
+<div class="wrap">
+  <div class="page01"></div>
+  <div class="page02"></div>
+   <div class="page03"></div>
+  <div class="page04"></div>
+  <div class="page05"></div>
+  <div class="page06"></div>
+  <div class="page07"></div>
+  <div class="page08"></div>
+  <div class="page09"></div>
+  <div class="page10"></div>
+  <div class="page11"></div>
+  
+
+  </div>
+
+
+
+<script>
+$(document).ready(
+
+  function() { 
+
+    $('html').niceScroll({
+		cursorcolor:"#CCC",
+		cursorwidth:7,
+		scrollspeed:90,
+		mousescrollstep:30,
+		background:"#FFF",
+		cursorborder:"none",
+		autohidemode:true,
+		zindex:99999
+	});
+	});
+</script>
+</body>
+</html>
